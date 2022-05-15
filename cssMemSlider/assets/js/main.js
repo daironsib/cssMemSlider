@@ -13,7 +13,7 @@ function showSlide(n) {
   }
 
   for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none'
+    slides[i].classList.remove('show')
   }
 
 
@@ -21,9 +21,9 @@ function showSlide(n) {
     dots[i].classList.remove('active')
   }
 
-  slides[currentSlide - 1].style.display = 'block'
+  slides[currentSlide - 1].classList.add('show')
   dots[currentSlide - 1].classList.add('active')
-  sliderText.innerHTML = slides[currentSlide - 1].alt
+  sliderText.innerHTML = `<span>${slides[currentSlide - 1].alt}</span>`
 }
 
 function switchSlide(n) {
